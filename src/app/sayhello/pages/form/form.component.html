@@ -1,0 +1,46 @@
+<div class="bg-main max-h-screen h-screen">
+  <button class="relative top-7 left-10" routerLink="/">
+    <i class="fas fa-arrow-left text-2xl text-white"></i>
+  </button>
+
+
+  <h3 @title class="text-blue-200 text-4xl tracking-wider text-center font-bold mb-10 mt-10">
+    ¿Cómo puedo ayudarte el día de hoy?
+  </h3>
+
+  <div @form class="w-2/6 bg-gray-900  mx-auto shadow-xl rounded-lg py-3">
+
+    <form class="w-4/6 mx-auto mt-7">
+      <div class="mx-auto w-full mb-4">
+        <label class="block uppercase text-gray-400 text-md font-bold mb-2" for="name">
+          Nombre
+        </label>
+        <input type="text" class="shadow bg-gray-700  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline" id="name">
+      </div>
+
+      <div class="mx-auto w-full mb-4">
+        <label class="block uppercase text-gray-400 text-md font-bold mb-2" for="email">
+          Correo electrónico
+        </label>
+        <input type="email" class="shadow bg-gray-700  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline" id="email">
+      </div>
+
+      <div class="mx-auto w-full mb-4">
+        <label class="block uppercase text-gray-400 text-md font-bold mb-2" for="message">
+          Mensaje
+        </label>
+        <textarea id="message" cols="30" rows="4" class="shadow bg-gray-700 resize-none	  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline">
+        </textarea>
+      </div>
+    </form>
+    <button (click)="confirm()" class="block p-2 px-4 ease-in-out duration-300 text-white text-lg rounded-lg border-2 border-indigo-500 hover:bg-indigo-500 hover:text-2xl mx-auto">
+      Enviar
+    </button>
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+  </div>
+
+  <div class="w-4/12  fixed top-2">
+    <p-messages class="w-3/6" [value]="msgs"></p-messages>
+  </div>
+
+</div>

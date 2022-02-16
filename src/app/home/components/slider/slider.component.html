@@ -1,0 +1,103 @@
+<div class="slider pb-7 bg-main h-72 | sm:h-60 md:h-64">
+  <swiper style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff; box-shadow: 0px 4px 15px #000;" [speed]="600"
+    [parallax]="true" [pagination]="{
+    clickable: true
+  }" [navigation]="false" class="mySwiper">
+    <div slot="container-start" class="parallax-bg"
+      style="background-image: url('https://w.wallhaven.cc/full/0q/wallhaven-0q6j57.jpg'); background-position: center; background-repeat: no-repeat;"
+      data-swiper-parallax="-23%"></div>
+
+    <!-- That's me! -->
+    <ng-template swiperSlide>
+      <div
+       class="title text-3xl font-semibold text-blue-600 pt-8 pl-8 | xl:text-4xl" data-swiper-parallax="-300">That's me!!
+        <ngx-emoji emoji="computer" [size]="23" class="ml-3"></ngx-emoji>
+      </div>
+      <div
+      class="text-white w-3/4 mt-1 ml-8 p-1 pt-0 italic text-sm font-medium
+      |  md:text-base md:w-5/6 lg:w-1/2
+      ">
+        <p>
+          Me llamo Miguel Ángel Bermúdez Cruz, soy de México especificamente del estado de Oaxaca. <br>
+          Llevo aproximadamente 2 años en desarollo web buscando y perfeccionando proyectos personales y
+          profesionales.
+        </p>
+      </div>
+    </ng-template>
+
+
+    <!-- Skills -->
+    <ng-template swiperSlide>
+      <div
+      class="title text-3xl  font-semibold text-center text-blue-600 pt-8 pb-0 | xl:text-4xl"
+      data-swiper-parallax="-300">
+        Main skills</div>
+      <div class="text w-full" data-swiper-parallax="-100">
+        <ul class="grid grid-cols-4 gap-y-4 mt-6 w-5/6 mx-auto | sm:grid-cols-8 sm:gap-x-4 sm:w-11/12 | lg:gap-x-7 | xl:w-3/4">
+          <li class="group ">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Fjavascript-1.svg?alt=media&token=d5dbfb9e-e209-40e0-a6cf-d4e8d60c5d20"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Javascript</h3>
+          </li>
+          <li class="group ">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Ftypescript.svg?alt=media&token=43c01cd2-9108-4152-b137-1fb819ff123c"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Typescript</h3>
+          </li>
+          <li class="">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Fangular.svg?alt=media&token=92970bdd-5293-405f-beab-5b5b1fc05913">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Angular</h3>
+          </li>
+          <li class="">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Fcss.svg?alt=media&token=f6b6d86d-5d99-4237-9780-5401d9766ebd"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">CSS</h3>
+          </li>
+          <li class="">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Ftailwindcss.svg?alt=media&token=d4f7fe18-80c0-4a71-a235-bf53eb13f162"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Tailwindcss</h3>
+          </li>
+          <li class="">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Ffigma.svg?alt=media&token=1e46585b-66bf-433d-98f3-91226d390798"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Figma</h3>
+          </li>
+          <li class="">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Fgit.svg?alt=media&token=c268336c-6c93-42c1-a80b-9a712087569d"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Git</h3>
+          </li>
+          <li class="">
+            <img class="w-10 h-10 mx-auto | lg:w-12 lg:h-12"
+              src="https://firebasestorage.googleapis.com/v0/b/miguelbercru-reside.appspot.com/o/skills%2Ffirebase.svg?alt=media&token=926640c6-c844-44fd-8dc7-ced3b6a77afe"
+              alt="">
+            <h3 class="text-white font-bold text-xs relative top-2 text-center | md:text-sm | lg:text-base">Firebase</h3>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+
+    <!-- Aptitudes -->
+    <ng-template class="h-64" swiperSlide>
+      <div class="title text-3xl font-semibold w-11/12 text-right text-blue-600 pt-8 pl-8 | xl:text-4xl"
+        data-swiper-parallax="-300">Aptitudes
+      </div>
+      <div class="text text-right text-white w-11/12  mt-3  p-1 pt-0 block font-medium text-sm | md:text-base ">
+        <ul>
+          <li class="font-bold"><i class="fas fa-users text-blue-500 text-lg"></i> Trabajo en equipo</li>
+          <li class="font-bold"><i class="fas fa-thumbs-up text-blue-500 text-lg"></i> Capacidad de adptación</li>
+          <li class="font-bold"><i class="fas fa-volume-up text-blue-500 text-lg"></i> Habilidades comunicativas</li>
+          <li class="font-bold"><i class="fas fa-briefcase text-blue-500 text-lg"></i> Esfuerzo y lealtad</li>
+        </ul>
+      </div>
+    </ng-template>
+  </swiper>
+</div>

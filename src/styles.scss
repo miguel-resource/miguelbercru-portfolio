@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto+Mono:wght@100&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Fonts */
+.text-cutive {
+  font-family: 'Cutive Mono';
+}
+
+.text-roboto {
+  font-family: 'Roboto Mono';
+}
+
+/* Color */
+.bg-main {
+  background-color: #031F38;
+}
+
+.button-scale:hover {
+  transform: scale(1.1);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

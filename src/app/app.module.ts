@@ -3,12 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { NgsRevealModule } from 'ngx-scrollreveal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SwiperModule } from 'swiper/angular';
+import { MaterialModule } from './material/material.module';
+import { FormComponent } from './sayhello/pages/form/form.component'
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormComponent
   ],
   imports: [
+    SwiperModule,
+    MaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
+    NgsRevealModule,
     BrowserModule,
     AppRoutingModule
   ],

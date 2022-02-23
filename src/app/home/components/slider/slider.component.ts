@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 // import Swiper core and required modules
-import SwiperCore, { Parallax, Pagination, Navigation } from "swiper";
+import SwiperCore, {Autoplay, Parallax, Pagination, Navigation } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([Parallax, Pagination, Navigation]);
+SwiperCore.use([Autoplay, Parallax, Pagination, Navigation]);
 
 @Component({
   selector: 'app-slider',

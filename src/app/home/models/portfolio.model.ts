@@ -3,6 +3,7 @@ export interface Portfolio {
   description: string;
   githubLink: string;
   pageLink: string;
+  figmaLink: string;
   img: string;
   thechnologies: string[];
 }

@@ -12,6 +12,7 @@ import { Portfolio } from './../../models/portfolio.model'
 })
 export class PortfolioComponent implements OnInit {
   projects: Portfolio[] = [];
+  pageLinks: any;
 
   constructor(
     private portFolioService: PortfolioService
@@ -25,10 +26,12 @@ export class PortfolioComponent implements OnInit {
           description: project.payload.doc.data().description,
           githubLink: project.payload.doc.data().githubLink,
           pageLink: project.payload.doc.data().pageLink,
+          figmaLink: project.payload.doc.data().figmaLink,
           img: project.payload.doc.data().img,
           thechnologies: project.payload.doc.data().thechnologies
         }
       });
+
 
     })
   }

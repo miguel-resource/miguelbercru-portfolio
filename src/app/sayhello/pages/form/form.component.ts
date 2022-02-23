@@ -9,8 +9,16 @@ import {
 import {ConfirmationService} from 'primeng/api';
 import { Message } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
+import {
+  FormGroup,
+  FormBuilder,
+  FormArray,
+  FormControl,
+  Validators
+} from '@angular/forms';
 
-
+/* Services */
+import { MessagesService } from './../../../home/services/messages.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -43,27 +51,49 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class FormComponent implements OnInit {
   msgs: Message[] = [];
+  formContact: FormGroup = new FormGroup({});
+  nameControl: FormControl = new FormControl('', Validators.required);
+  emailControl: FormControl = new FormControl('', Validators.required);
+  messageControl: FormControl = new FormControl('', Validators.required);
 
   constructor(
+    private mesaggesService: MessagesService,
     private confirmationService: ConfirmationService,
-    private primengConfig: PrimeNGConfig
+    private primengConfig: PrimeNGConfig,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
+
+    this.formContact = this.formBuilder.group({
+      name: this.nameControl,
+      email: this.emailControl,
+      message: this.messageControl
+    });
+
   }
 
-  confirm(): void {
+  sendMessage(): void {
     this.confirmationService.confirm({
       message: '¿Estás seguro de enviar el mensaje?',
       header: 'Confirmación',
       icon: 'pi pi-question',
       accept: () => {
-        this.msgs = [{
-          severity: 'info',
-          summary: 'Success',
-          detail: 'Mensaje enviado correctamente'
-        }]
+        let message = {
+          name: this.formContact.controls['name'].value,
+          content: this.formContact.controls['message'].value,
+          email: this.formContact.controls['email'].value
+        }
+
+        this.mesaggesService.create(message).then(() => {
+          this.formContact.reset();
+          this.msgs = [{
+            severity: 'info',
+            summary: 'Success',
+            detail: 'Mensaje enviado correctamente'
+          }];
+        });
       },
       reject: () => {
         this.msgs = [{

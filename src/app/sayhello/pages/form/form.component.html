@@ -7,39 +7,48 @@
     ¿Cómo puedo ayudarte el día de hoy?
   </h3>
 
-  <div @form class="w-9/12 bg-gray-900 mx-auto shadow-xl rounded-lg py-3 | sm:w-8/12 | md:w-7/12 | lg:w-3/6 | xl:w-4/12">
+  <div @form class="w-9/12 bg-gray-900 mx-auto shadow-xl rounded-lg py-3 | md:w-7/12 | lg:w-3/6 | xl:w-4/12">
 
-    <form class="w-4/6 mx-auto mt-7">
+    <form class="w-5/6 mx-auto mt-7" [formGroup]="formContact">
       <div class="mx-auto w-full mb-4">
         <label class="block uppercase text-gray-400 text-md font-bold mb-2" for="name">
           Nombre
         </label>
-        <input type="text" class="shadow bg-gray-700  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline" id="name">
+        <input type="text" formControlName="name" class="shadow bg-gray-700  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline" id="name">
+        <small *ngIf="this.formContact.controls['name'].errors && (this.formContact.controls['name'].dirty || this.formContact.controls['name'].touched)"
+        class="text-red-800">*Ingresa el nombre
+      </small>
       </div>
 
       <div class="mx-auto w-full mb-4">
         <label class="block uppercase text-gray-400 text-md font-bold mb-2" for="email">
           Correo electrónico
         </label>
-        <input type="email" class="shadow bg-gray-700  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline" id="email">
+        <input type="email" formControlName="email" email class="shadow bg-gray-700  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline" id="email">
+        <small *ngIf="this.formContact.controls['email'].errors && (this.formContact.controls['email'].dirty || this.formContact.controls['email'].touched)"
+        class="text-red-800">*Ingresa correctamente el email
+      </small>
       </div>
 
       <div class="mx-auto w-full mb-4">
         <label class="block uppercase text-gray-400 text-md font-bold mb-2" for="message">
           Mensaje
         </label>
-        <textarea id="message" cols="30" rows="4" class="shadow bg-gray-700 resize-none	  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline">
+        <textarea id="message" formControlName="message" cols="30" rows="4" class="shadow bg-gray-700 resize-none	  rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline">
         </textarea>
+        <small *ngIf="this.formContact.controls['message'].errors && (this.formContact.controls['message'].dirty || this.formContact.controls['message'].touched)"
+        class="text-red-800">*Ingresa el mensaje
+      </small>
       </div>
     </form>
-    <button (click)="confirm()" class="block p-2 px-4 ease-in-out duration-300 text-white text-lg rounded-lg border-2 border-indigo-500 hover:bg-indigo-500 hover:text-2xl mx-auto">
+    <button  [disabled]="!this.formContact.valid" (click)="sendMessage()" class="block p-2 px-4 ease-in-out duration-300 text-white text-lg rounded-lg border-2 border-indigo-500 hover:bg-indigo-500 hover:text-2xl mx-auto">
       Enviar
     </button>
-    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+    <p-confirmDialog [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw', padding: '10px'}" [baseZIndex]="10000"></p-confirmDialog>
   </div>
 
-  <div class="w-4/12  fixed top-2">
-    <p-messages class="w-3/6" [value]="msgs"></p-messages>
+  <div class="w-10/12  fixed top-2 left-3 | sm:w-3/5 | lg:w-2/5">
+    <p-messages class="w-10/12" [value]="msgs"></p-messages>
   </div>
 
 </div>

@@ -27,8 +27,6 @@ export class DocumentsComponent implements OnInit {
           img: e.payload.doc.data().img
         }
       });
-
-      console.log(this.diplomas);
     })
   }
 

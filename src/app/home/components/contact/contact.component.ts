@@ -13,22 +13,22 @@ export class ContactComponent implements OnInit {
     /* Telegram */
     {
       icon: 'fab fa-telegram-plane',
-      link: '#',
+      link: 'https://t.me/miguelbc_UwU',
     },
     /* Email */
     {
       icon: 'far fa-envelope',
-      link: '#',
+      link: 'mailto:miguelbercru27@gmail.com',
     },
     /* Linkedin */
     {
       icon: 'fab fa-linkedin-in',
-      link: '#',
+      link: 'https://www.linkedin.com/in/miguel-berm%C3%BAdez-cruz-797395192/',
     },
     /* Github */
     {
       icon: 'fab fa-github-square',
-      link: '#',
+      link: 'https://github.com/miguel-resource',
     },
   ];
 

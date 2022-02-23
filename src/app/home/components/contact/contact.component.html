@@ -3,9 +3,9 @@
   <div class="grid grid-cols-4 w-10/12 gap-x-4 mx-auto mt-10 text-white | md:w-4/6 md:gap-x-8 | lg:gap-x-20">
     <!-- Contacts -->
     <button *ngFor="let contacto of contactos"
-      class="w-full group ease-in-out duration-300 bg-gray-900 shadow-2xl h-16 rounded-2xl hover:bg-blue-600 button-scale | lg:h-20 ">
-      <a class="text-2xl group-hover:text-gray-800 | lg:text-3xl" href="{{ contacto.link }}">
-        <i class="{{ contacto.icon }}"></i>
+      class="w-full h-12 group ease-in-out duration-300 bg-gray-900 shadow-2xl rounded-2xl hover:bg-blue-600 button-scale | lg:h-20 ">
+      <a class="w-full group-hover:text-gray-800 | lg:text-3xl" href="{{ contacto.link }}" target="_blank">
+        <i class="{{ contacto.icon }} w-full"></i>
       </a>
     </button>
 

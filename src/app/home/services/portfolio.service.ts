@@ -10,7 +10,7 @@ export class PortfolioService {
   ) { }
 
   getAll():any {
-     return this.firestore.collection("portfolio").snapshotChanges();
+    return this.firestore.collection("portfolio").snapshotChanges();
   }
 
 }

@@ -9,6 +9,7 @@ import { SwiperModule } from 'swiper/angular';
 import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
+
 import { MaterialModule } from '../material/material.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ContactComponent } from './components/contact/contact.component';

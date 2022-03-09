@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 /* Material Angula */
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule, TooltipComponent } from '@angular/material/tooltip';
+import { MatRippleModule } from '@angular/material/core';
 
 /* PrimeNg */
 import { TooltipModule } from 'primeng/tooltip';
@@ -14,6 +15,7 @@ import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [],
   imports: [
+    MatRippleModule,
     TooltipModule,
     MatTooltipModule,
     MessagesModule,
@@ -24,6 +26,7 @@ import {ButtonModule} from 'primeng/button';
   ],
   exports: [
     MatButtonToggleModule,
+    MatRippleModule,
     TooltipModule,
     MessagesModule,
     ConfirmDialogModule,

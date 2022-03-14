@@ -15,9 +15,13 @@ const routes: Routes = [
     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
   },
   {
+    path: 'blog/:id',
+    loadChildren: () => import('./post/post.module').then(m => m.PostModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
-  }
+  },
 ];
 
 @NgModule({
